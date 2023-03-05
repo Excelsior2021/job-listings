@@ -1,0 +1,89 @@
+@use "../../partials/variables" as *;
+
+.job-item {
+  position: relative;
+  list-style: none;
+  background-color: white;
+  width: 100%;
+  height: 256px;
+  border-radius: 5px;
+  margin: 40px auto;
+  padding: 32px 24px 24px 24px;
+  box-shadow: 0 15px 20px -5px rgb(13, 113, 130, 0.15);
+
+  &--featured {
+    border-left: 5px solid $dark-cyan;
+  }
+
+  &__logo-container {
+    position: absolute;
+    width: 48px;
+    height: 48px;
+    top: -24px;
+  }
+
+  &__logo {
+    width: 100%;
+  }
+
+  &__details {
+    border-bottom: 1px solid $dark-grayish-cyan;
+    padding-bottom: 16px;
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px;
+  }
+
+  &__company {
+    color: $dark-cyan;
+    margin-right: 32px;
+  }
+
+  &__badge {
+    display: block;
+    color: white;
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    height: 24px;
+    border-radius: 12px;
+    padding: 0.65rem;
+
+    &--new {
+      background-color: $dark-cyan;
+      margin-right: 8px;
+    }
+
+    &--featured {
+      background-color: $darker-grayish-cyan;
+    }
+  }
+
+  &__position {
+    margin-bottom: 16px;
+  }
+
+  &__meta {
+    font-size: 1.6rem;
+    font-weight: 500;
+    color: $dark-grayish-cyan;
+  }
+
+  &__requirements {
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 16px;
+    column-gap: 16px;
+    margin-top: 16px;
+  }
+
+  &__requirement {
+    color: $dark-cyan;
+    background-color: $light-grayish-cyan;
+    font-size: 1.6rem;
+    border-radius: 4px;
+    padding: 0.8rem;
+  }
+}

@@ -1,3 +1,5 @@
+@use "./variables" as *;
+
 @font-face {
   font-family: "League Spartan";
   src: url("../assets/fonts/League_Spartan/LeagueSpartan-VariableFont_wght.ttf");
@@ -17,6 +19,11 @@ html {
 
 body {
   font-family: "League Spartan";
-  font-weight: 500;
+  font-weight: 700;
   font-size: 1.5rem;
+  background-color: $light-grayish-cyan;
+}
+
+.main {
+  padding: 0 24px;
 }

@@ -1,0 +1,8 @@
+@use "../../partials/variables" as *;
+
+.header {
+  background-color: $dark-cyan;
+  background-image: url("./images/bg-header-mobile.svg");
+  width: 100vw;
+  height: 156px;
+}
