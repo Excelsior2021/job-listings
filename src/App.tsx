@@ -1,11 +1,11 @@
 import Header from "./components/Header/Header"
-import JobList from "./components/JobsList/JobList"
+import JobsList from "./components/JobsList/JobsList"
 
 const App = () => (
   <>
     <Header />
     <main className="main">
-      <JobList />
+      <JobsList />
     </main>
   </>
 )

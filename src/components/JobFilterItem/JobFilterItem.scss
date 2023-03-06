@@ -1,0 +1,25 @@
+.job-filter-list {
+  background-color: white;
+  display: none;
+  list-style: none;
+  position: absolute;
+  top: 40px;
+  left: 0;
+  font-size: 1.8rem;
+  width: 200px;
+  padding: 16px;
+  box-shadow: 0 15px 20px -5px rgb(13, 113, 130, 0.15);
+  z-index: 20;
+
+  &--open {
+    display: block;
+  }
+
+  &__item {
+    margin-bottom: 8px;
+  }
+
+  &__label {
+    margin-left: 16px;
+  }
+}

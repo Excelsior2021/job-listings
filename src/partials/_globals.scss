@@ -1,4 +1,5 @@
 @use "./variables" as *;
+@use "./mixins" as *;
 
 @font-face {
   font-family: "League Spartan";
@@ -24,6 +25,14 @@ body {
   background-color: $light-grayish-cyan;
 }
 
+button {
+  cursor: pointer;
+}
+
 .main {
   padding: 0 24px;
+
+  @include media-desktop {
+    padding: 0 40px;
+  }
 }
