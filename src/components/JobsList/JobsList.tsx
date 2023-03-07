@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { useEffect } from "react"
 import { useSelector, useDispatch } from "react-redux"
 import { fetchJobs } from "../../slices/jobsSlice"

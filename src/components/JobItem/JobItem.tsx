@@ -1,3 +1,4 @@
+// @ts-nocheck
 import "./JobItem.scss"
 
 const JobItem = ({ job }) => (

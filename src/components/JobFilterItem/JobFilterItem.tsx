@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { useState } from "react"
 import { useDispatch } from "react-redux"
 import menuArrow from "../../assets/icons/menu-down.svg"

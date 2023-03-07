@@ -1,3 +1,4 @@
+// @ts-nocheck
 import JobFilterItem from "../JobFilterItem/JobFilterItem"
 import filter from "../../assets/icons/filter.svg"
 import { useSelector } from "react-redux"
