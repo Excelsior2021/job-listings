@@ -15,7 +15,7 @@ const initialState = {
 }
 
 export const fetchJobs = createAsyncThunk("jobs/fetchJobs", async () => {
-  const response = await fetch("../../src/data/data.json")
+  const response = await fetch("./assets/data/data.json")
   return response.json()
 })
 

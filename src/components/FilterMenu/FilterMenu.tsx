@@ -1,5 +1,4 @@
 // @ts-nocheck
-
 import JobFilterItem from "../JobFilterItem/JobFilterItem"
 import closeMenu from "../../assets/icons/close.svg"
 import "./FilterMenu.scss"
