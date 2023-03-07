@@ -22,8 +22,6 @@ const JobsList = () => {
     handleFetchJobs()
   }, [])
 
-  console.log(jobs)
-
   return (
     <>
       <JobFilter />

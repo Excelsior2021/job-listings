@@ -4,7 +4,7 @@ import menuArrow from "../../assets/icons/menu-down.svg"
 import jobsSlice from "../../slices/jobsSlice"
 import "./JobFilterItem.scss"
 
-const JobFilterList = ({ filter: { name, options } }) => {
+const JobFilterItem = ({ filter: { name, options }, menu }) => {
   const [filterOpen, setFilterOpen] = useState(false)
   const dispatch = useDispatch()
   const {
@@ -23,40 +23,49 @@ const JobFilterList = ({ filter: { name, options } }) => {
   }
 
   return (
-    <>
-      <button
-        key={name}
-        className="job-filter__filter"
-        onClick={() => {
-          setFilterOpen(!filterOpen)
-        }}>
-        {name}
-        <img src={menuArrow} alt="menu arrow" className="job-filter__arrow" />
-      </button>
+    <div className={menu ? "job-filter-item-menu" : "job-filter-item"}>
+      {!menu && (
+        <button
+          key={name}
+          className={menu ? "job-filter-item-menu" : "job-filter-item__button"}
+          onClick={() => {
+            setFilterOpen(!filterOpen)
+          }}>
+          {name}
+          <img src={menuArrow} alt="menu arrow" className="job-filter__arrow" />
+        </button>
+      )}
+      {menu && <h2 className="job-filter-item-menu__heading">{name}</h2>}
       <ul
         className={
-          filterOpen
-            ? "job-filter-list job-filter-list--open"
-            : "job-filter-list"
+          menu
+            ? "job-filter-item-menu__list"
+            : filterOpen
+            ? "job-filter-item__list job-filter-item__list--open"
+            : "job-filter-item__list"
         }>
         {options.map(option => (
-          <li key={option} className="job-filter-list__item">
+          <li
+            key={option}
+            className={
+              menu ? "job-filter-item-menu__item" : "job-filter-item__item"
+            }>
             <input
-              className="job-filter-list__input"
+              className="job-filter-item__input"
               name={option}
               value={option}
               type="checkbox"
               defaultChecked
               onChange={handleFilters}
             />
-            <label className="job-filter-list__label" htmlFor={option}>
+            <label className="job-filter-item__label" htmlFor={option}>
               {option}
             </label>
           </li>
         ))}
       </ul>
-    </>
+    </div>
   )
 }
 
-export default JobFilterList
+export default JobFilterItem

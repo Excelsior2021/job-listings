@@ -1,12 +1,14 @@
 import JobFilterItem from "../JobFilterItem/JobFilterItem"
 import filter from "../../assets/icons/filter.svg"
-import "./JobFilter.scss"
 import { useSelector } from "react-redux"
 import { useEffect, useState } from "react"
+import FilterMenu from "../FilterMenu/FilterMenu"
+import "./JobFilter.scss"
 
 const JobFilter = () => {
   const filtersData = useSelector(state => state.jobs.filters)
   const [filters, setFilters] = useState(null)
+  const [menuOpen, setMenuOpen] = useState(false)
 
   useEffect(() => {
     const filterArray = []
@@ -14,11 +16,15 @@ const JobFilter = () => {
       filterArray.push({ name: filter, options: filtersData[filter] })
     }
     setFilters(filterArray)
-    console.log(filterArray)
   }, [])
 
   return (
     <div className="job-filter">
+      <FilterMenu
+        filters={filters}
+        menuOpen={menuOpen}
+        setMenuOpen={setMenuOpen}
+      />
       <div className="job-filter__filters">
         {filters &&
           filters.map(filter => (
@@ -28,7 +34,9 @@ const JobFilter = () => {
           ))}
       </div>
 
-      <button className="job-filter__menu-button">
+      <button
+        className="job-filter__menu-button"
+        onClick={() => setMenuOpen(true)}>
         <img src={filter} alt="filter" className="job-filter__icon" />
         filter
       </button>

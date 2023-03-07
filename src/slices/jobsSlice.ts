@@ -28,9 +28,12 @@ const jobsSlice = createSlice({
         if (
           state.filters.roles.includes(job.role) &&
           state.filters.levels.includes(job.level) &&
-          (state.filters.languages.includes(...job.languages) ||
+          (state.filters.languages.some(language =>
+            job.languages.includes(language)
+          ) ||
             job.languages.length === 0) &&
-          (state.filters.tools.includes(...job.tools) || job.tools.length === 0)
+          (state.filters.tools.some(tool => job.tools.includes(tool)) ||
+            job.tools.length === 0)
         )
           return job
       })
@@ -51,7 +54,6 @@ const jobsSlice = createSlice({
             filter => filter !== action.payload.value
           ),
         }
-      console.log(state.filters)
     },
   },
   extraReducers: builder => {

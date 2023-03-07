@@ -24,19 +24,6 @@
     position: relative;
   }
 
-  &__filter {
-    text-transform: capitalize;
-
-    @include media-desktop {
-      display: flex;
-      font-weight: 700;
-      color: $dark-cyan;
-      background-color: $light-grayish-cyan;
-      border: none;
-      padding: 0.5rem 1rem;
-    }
-  }
-
   &__menu-button {
     display: flex;
     font-size: 1.6rem;

@@ -1,18 +1,36 @@
-.job-filter-list {
-  background-color: white;
-  display: none;
-  list-style: none;
-  position: absolute;
-  top: 40px;
-  left: 0;
-  font-size: 1.8rem;
-  width: 200px;
-  padding: 16px;
-  box-shadow: 0 15px 20px -5px rgb(13, 113, 130, 0.15);
-  z-index: 20;
+@use "../../partials/variables" as *;
+@use "../../partials/mixins" as *;
 
-  &--open {
-    display: block;
+.job-filter-item {
+  &__list {
+    background-color: white;
+    display: none;
+    list-style: none;
+    position: absolute;
+    top: 40px;
+    left: 0;
+    font-size: 1.8rem;
+    width: 200px;
+    padding: 16px;
+    box-shadow: 0 15px 20px -5px rgb(13, 113, 130, 0.15);
+    z-index: 10;
+
+    &--open {
+      display: block;
+    }
+  }
+
+  &__button {
+    text-transform: capitalize;
+
+    @include media-desktop {
+      display: flex;
+      font-weight: 700;
+      color: $dark-cyan;
+      background-color: $light-grayish-cyan;
+      border: none;
+      padding: 0.5rem 1rem;
+    }
   }
 
   &__item {
@@ -21,5 +39,25 @@
 
   &__label {
     margin-left: 16px;
+  }
+}
+
+.job-filter-item-menu {
+  margin-bottom: 40px;
+
+  &__heading {
+    text-transform: capitalize;
+    color: $light-grayish-cyan;
+  }
+
+  &__list {
+    list-style: none;
+    font-size: 1.8rem;
+    margin: 16px auto;
+  }
+
+  &__item {
+    color: $light-grayish-cyan;
+    margin-bottom: 24px;
   }
 }
